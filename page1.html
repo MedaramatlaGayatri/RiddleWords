@@ -11,14 +11,42 @@
 <body>
     <div class="container">
         <div class="nav">
-            <img src="/images/pause.jpg" alt="pause" style="border-radius: 50%;"><strong>Level 1</strong> 
+            <img src="/images/pause.jpg" alt="pause" style="border-radius: 50%;" onclick="homePage()"><strong id="level">Level</strong> 
         </div>
-        <div class="riddle"><h1>I have no life <br> but I can die <br>who am I?
-        <div id="#answer">
-
+        <div class="riddle"><h4 id="demo">Riddles</h4></div>
+        <button onclick="myFunction()" style="position: absolute; height: 40px; width:50%; margin-left: 5%;margin-top:55px; margin-bottom: 10%;">Get Riddle</button>
+        <br>
+        <input type="text" id="answer" style="position: absolute; height: 30px; margin-top: 90%; margin-left:0%; border-left:0em;padding-left: 0%;">
+        <br>
+        <div style="height:20px; position:absolute; margin-top: 110%; margin-left:1px;">
+            <button onclick="checkAnswer()" style=" height:40px; width:10em;">check Answer</button>
         </div>
-        </h1></div>
-
+        <button onclick="mysterWords()" style="height:40px; width:50%; border-radius:5%;margin-top: 130%; position:absolute;">Next</button>
     </div>
+    <script>
+        var level = "1";
+        function myFunction() {
+            var s = getQuestion();
+          document.getElementById("demo").innerHTML = s;
+        }
+
+        function mysterWords(){
+            location.replace("page2.html");
+        }
+
+        function checkAnswer(){
+            var answer = document.getElementById("answer").value;
+            let index = getIndex();
+            let x = riddleAnswers[index];
+            if(answer == x){
+                index = getIndex();
+                document.getElementById("level").innerHTML = getLevel();
+                updateKey();
+                document.getElementById("demo").innerHTML = "Excellent";
+            }else{
+                document.getElementById("demo").innerHTML = "Wrong Answer";
+            }
+        }
+        </script>
 </body>
 </html>

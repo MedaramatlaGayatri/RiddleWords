@@ -6,12 +6,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="words.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="nav">
-            <img src="/images/pause.jpg" alt="pause" style="border-radius: 50%;"><strong>Level 1</strong> 
+            <img src="/images/pause.jpg" alt="pause" style="border-radius: 50%;" onclick="homePage()"><strong id="level">Level</strong> 
         </div>
+        <div>
+            <br>
+            <br>
+            <h3 id="wordLength">Mystery Word</h3>
+            <br>
+        </div>
+        <div style="position: absolute;margin-top: 40%;height:100px;">
+            <button onclick="makeRows()" >Try it</button>
+        </div>
+        <div style="position: absolute;margin-top: 50%;margin-right: 90%; height:100px;">
+        <button  onclick="checkAnswer('A')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">A</button>
     </div>
+    <div style="position: absolute;margin-top: 50%;margin-right: 65%; height:100px;">
+        <button  onclick="checkAnswer('B')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">B</button>
+    </div>
+    <div style="position: absolute;margin-top: 50%;margin-right: 40%; height:100px;">
+        <button  onclick="checkAnswer('C')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">C</button>
+    </div>
+    <div style="position: absolute;margin-top: 50%;margin-right: 15%; height:100px;">
+        <button  onclick="checkAnswer('D')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">D</button>
+    </div>
+    <div style="position: absolute;margin-top: 50%;margin-left: 35px; height:100px;">
+        <button  onclick="checkAnswer('E')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">E</button>
+    </div>
+    <div style="position: absolute;margin-top: 50%;margin-left: 120px; height:100px;">
+        <button  onclick="checkAnswer('F')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">F</button>
+    </div>
+    <div style="position: absolute;margin-top: 50%;margin-left: 60%; height:100px;">
+        <button  onclick="checkAnswer('G')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">G</button>
+    </div>
+    <div style="position: absolute;margin-top: 65%;margin-right: 90%; height:100px;">
+        <button  onclick="checkAnswer('H')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">H</button>
+    </div>
+    <br>
+    <div style="position: absolute;margin-top: 65%;margin-right: 65%; height:100px;">
+        <button  onclick="checkAnswer('I')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">I</button>
+    </div>
+    <div style="position: absolute;margin-top: 65%;margin-right: 40%; height:100px;">
+        <button  onclick="checkAnswer('J')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">J</button>
+    </div>
+    <div style="position: absolute;margin-top: 65%;margin-right: 15%; height:100px;">
+        <button  onclick="checkAnswer('K')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">K</button>
+    </div>
+    <div style="position: absolute;margin-top: 65%;margin-left: 35px; height:100px;">
+        <button  onclick="checkAnswer('L')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">L</button>
+    </div>
+    <div style="position: absolute;margin-top: 65%;margin-left: 120px; height:100px;">
+        <button  onclick="checkAnswer('M')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">M</button>
+    </div>
+    <div style="position: absolute;margin-top: 65%;margin-left: 60%; height:100px;">
+        <button  onclick="checkAnswer('N')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">N</button>
+    </div>
+    <div style="position: absolute;margin-top: 80%;margin-right: 90%; height:100px;">
+        <button  onclick="checkAnswer('O')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">O</button>
+    </div>
+    <div style="position: absolute;margin-top: 80%;margin-right: 65%; height:100px;">
+        <button  onclick="checkAnswer('P')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">P</button>
+    </div>
+    <div style="position: absolute;margin-top: 80%;margin-right: 40%; height:100px;">
+        <button  onclick="checkAnswer('Q')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">Q</button>
+    </div>
+    <div style="position: absolute;margin-top: 80%;margin-right: 15%; height:100px;">
+        <button  onclick="checkAnswer('R')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">R</button>
+    </div>
+    <div style="position: absolute;margin-top: 80%;margin-left: 35px; height:100px;">
+        <button  onclick="checkAnswer('S')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">S</button>
+    </div>
+    <div style="position: absolute;margin-top: 80%;margin-left: 120px; height:100px;">
+        <button  onclick="checkAnswer('T')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">T</button>
+    </div>
+    <div style="position: absolute;margin-top: 80%;margin-left: 60%; height:100px;">
+        <button  onclick="checkAnswer('U')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">U</button>
+    </div>
+    <div style="position: absolute;margin-top: 95%;margin-right: 90%; height:100px;">
+        <button  onclick="checkAnswer('V')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">V</button>
+    </div>
+    <div style="position: absolute;margin-top: 95%;margin-right: 65%; height:100px;">
+        <button  onclick="checkAnswer('W')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">W</button>
+    </div>
+    <div style="position: absolute;margin-top: 95%;margin-right: 40%; height:100px;">
+        <button  onclick="checkAnswer('X')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">X</button>
+    </div>
+    <div style="position: absolute;margin-top: 95%;margin-right: 15%; height:100px;">
+        <button  onclick="checkAnswer('Y')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">Y</button>
+    </div>
+    <div style="position: absolute;margin-top: 95%;margin-left: 35px; height:100px;">
+        <button  onclick="checkAnswer('Z')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">Z</button>
+    </div>
+    <div style="position: absolute;margin-top: 110%; height:100px;">
+        <button onClick="changePage()">Next</button></div>
+    </div>
+    <script>
+        var cols = 0;
+        var rows = 1;
+        var ans = "";
+        function makeRows() {
+            cols = getNoofBoxes();
+            rows = 1;
+            for (c = 0; c < (rows * cols); c++) {
+                ans = ans+"$";
+            };
+            document.getElementById("wordLength").innerHTML = ans;
+        };
+        function homePage(){
+            location.replace("home.html");
+        }
+        function checkAnswer(x){
+            let word = getmysterWords();
+            if(word.indexOf(x) != -1){
+                for(let i = 0;i < word.length;i++){
+                    if(word[i] == x){
+                        ans = setCharAt(ans,i,x);
+                    }
+                }
+            }
+            if(ans.length == cols){
+                if(ans == word){
+                    document.getElementById("wordLength").innerHTML = "Great! Mystery word is"+ans;
+                    document.getElementById("level").innerHTML = getLevel();
+                    ans ="";
+                    incrementIndex();
+                    updateKey();
+                    return ;
+                }else{
+                    if(ans.indexOf('$') == -1){
+                        makeRows();
+                    }
+                }
+            }
+            document.getElementById("wordLength").innerHTML = ans;
+        }
+
+        function setCharAt(str,index,chr) {
+            if(index > str.length-1) return str;
+            return str.substring(0,index) + chr + str.substring(index+1);
+        }
+
+        function changePage(){
+            location.replace("page1.html");
+        }
+    </script>
 </body>
 </html>

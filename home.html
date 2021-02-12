@@ -12,8 +12,19 @@
         <div class="play" onclick="myFunction()"><h2>Play</h2></div>
     </div>
     <script>
+        var keyValue = "1";
         function myFunction() {
+            indexIntialize();
+          localStorage.setItem("keyName",keyValue);   
           location.replace("page1.html")
+        }
+        var indexValue = "0";
+        function indexIntialize(){
+            localStorage.setItem("indexKey",indexValue);   
+        }
+        var wordindex = "0";
+        function wordIndexIntialize(){
+            localStorage.setItem("wordindexkey",wordindex);
         }
         </script>
 </body>
