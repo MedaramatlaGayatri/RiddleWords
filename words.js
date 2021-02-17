@@ -9,11 +9,11 @@ function getmysterWords(){
 }
 
 function getIndex(){
-    let index = parseInt(localStorage.getItem("indexKey"));
+    let index = parseInt(localStorage.getItem("wordindexkey"));
     return index;
 }
 function incrementIndex(){
-    localStorage.setItem("indexKey",(parseInt(localStorage.getItem("indexKey"))+1).toString(10));
+    localStorage.setItem("wordindexkey",(parseInt(localStorage.getItem("wordindexkey"))+1).toString(10));
 }
 function updateKey(){
     localStorage.setItem("keyName",(parseInt(localStorage.getItem("keyName"))+1).toString(10));

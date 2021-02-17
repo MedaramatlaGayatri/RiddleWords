@@ -8,7 +8,7 @@
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload='myFunction()'>
     <div class="container">
         <div class="nav">
             <img src="/images/pause.jpg" alt="pause" style="border-radius: 50%;" onclick="homePage()"><strong id="level">Level</strong> 
@@ -21,30 +21,31 @@
         <div style="height:20px; position:absolute; margin-top: 110%; margin-left:1px;">
             <button onclick="checkAnswer()" style=" height:40px; width:10em;">check Answer</button>
         </div>
-        <button onclick="mysterWords()" style="height:40px; width:50%; border-radius:5%;margin-top: 130%; position:absolute;">Next</button>
+        <button onclick="mysterWords()" style="height:40px; width:50%; border-radius:5%;margin-top: 130%; position:absolute;">Bonus Level</button>
     </div>
     <script>
         var level = "1";
         function myFunction() {
+            document.getElementById("level").innerHTML = getLevel();
             var s = getQuestion();
-          document.getElementById("demo").innerHTML = s;
+            document.getElementById("demo").innerHTML = s;
         }
-
         function mysterWords(){
             location.replace("page2.html");
         }
-
         function checkAnswer(){
             var answer = document.getElementById("answer").value;
             let index = getIndex();
             let x = riddleAnswers[index];
             if(answer == x){
                 index = getIndex();
-                document.getElementById("level").innerHTML = getLevel();
                 updateKey();
+                incrementIndex();
                 document.getElementById("demo").innerHTML = "Excellent";
+                clearInputField();
             }else{
                 document.getElementById("demo").innerHTML = "Wrong Answer";
+                clearInputField();
             }
         }
         </script>

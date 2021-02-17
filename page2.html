@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="words.js"></script>
 </head>
-<body>
+<body onload="makeRows()">
     <div class="container">
         <div class="nav">
             <img src="/images/pause.jpg" alt="pause" style="border-radius: 50%;" onclick="homePage()"><strong id="level">Level</strong> 
@@ -20,7 +20,7 @@
             <br>
         </div>
         <div style="position: absolute;margin-top: 40%;height:100px;">
-            <button onclick="makeRows()" >Try it</button>
+            <button onclick="makeRows()" ></button>
         </div>
         <div style="position: absolute;margin-top: 50%;margin-right: 90%; height:100px;">
         <button  onclick="checkAnswer('A')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">A</button>
@@ -102,13 +102,14 @@
         <button  onclick="checkAnswer('Z')" style="position: absolute;margin-top: 50%; height:30px; width:30px;">Z</button>
     </div>
     <div style="position: absolute;margin-top: 110%; height:100px;">
-        <button onClick="changePage()">Next</button></div>
+        <button onClick="changePage()">Back</button></div>
     </div>
     <script>
         var cols = 0;
         var rows = 1;
         var ans = "";
         function makeRows() {
+            document.getElementById("level").innerHTML = getLevel();
             cols = getNoofBoxes();
             rows = 1;
             for (c = 0; c < (rows * cols); c++) {
@@ -131,10 +132,9 @@
             if(ans.length == cols){
                 if(ans == word){
                     document.getElementById("wordLength").innerHTML = "Great! Mystery word is"+ans;
-                    document.getElementById("level").innerHTML = getLevel();
                     ans ="";
                     incrementIndex();
-                    updateKey();
+                   // updateKey();
                     return ;
                 }else{
                     if(ans.indexOf('$') == -1){
